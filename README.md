@@ -1,3 +1,8 @@
+# UP REPO DEBIAN
+<pre><code></code></pre>
+# UP REPO UBUNTU
+<pre><code></code></pre>
+
 ### INSTALL SCRIPT 
 ```
 apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/Valkry7/Apex/ZX/ubu20-deb10-stable.sh && chmod +x ubu20-deb10-stable.sh && ./ubu20-deb10-stable.sh
@@ -9,23 +14,19 @@ wget -q https://raw.githubusercontent.com/valkry7/Apex/ZX/update.sh && chmod +x 
 ```
 
 ### WORK DI OS
-- UBUNTU 20.04.05
-- DEBIAN 10 ( Disarankan )
+- UBUNTU 18 / 20
+- DEBIAN 9 / 10
+- 
 
-### SETTING CLOUDFLARE
+### SUPPORT PORT
 ```
-- SSL/TLS : FULL
-- SSL/TLS Recommender : OFF
-- GRPC : ON
-- WEBSOCKET : ON
-- Always Use HTTPS : OFF
-- UNDER ATTACK MODE : OFF
+- SSL/TLS : 443 / 8443
+- SSHWS : 80 / 8880 / 8080 / 2082 / 2095 / 2096
 ```
 
 ### `WARNING !`
 ```
-Jika Mendapatkan Status Service Off
-Silahkan Restart Service.
-Jika Statsus Service Masih Off
-Silahkan Reboot vps kalian
+jangan di perjual belikan
+jangan di colong babi
+nanti kena hacking mining nangees
 ```

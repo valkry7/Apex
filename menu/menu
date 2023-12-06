@@ -112,13 +112,16 @@ freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
 tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )
+
+
 clear
 ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 dropbear_service=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 haproxy_service=$(systemctl status haproxy | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 xray_service=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 nginx_service=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#Status | Geo Project
+
+#Status
 clear
 # STATUS SERVICE  SSH 
 if [[ $ssh_service == "running" ]]; then 
@@ -176,8 +179,8 @@ ssx=$(grep -c -E "^#ss# " "/etc/xray/config.json")
 let ssa=$ssx/2
 
 # // color validity
-z="\033[96m"
-f="\033[1;97;41m"
+z="\033[95m"
+f="\033[1;97;46m" # 1;97 = text putih # 46 = bg cyan
 r="\033[1;31m"  #REDTERANG
 a=" ${CYAN}ACCOUNT"
 
@@ -189,7 +192,7 @@ sdw="ss-R"
 clear
 echo -e " "
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC${f}                        🇮🇩🇮🇩LT🇮🇩🇮🇩                         $NC${z}│$NC"
+echo -e " ${z}│$NC${f}                        🇮🇩🇮🇩LT🇮🇩🇮🇩                      ${NC} ${z}│${NC}"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC$r ⇲ $NC$y System OS ${NC}     $Blue=$NC $MODEL${NC}"
@@ -201,23 +204,23 @@ echo -e " ${z}│$NC$r ⇲ $NC$y IP VPS ${NC}        $Blue=$NC $IPVPS${NC}"
 echo -e " ${z}│$NC$r ⇲ $NC$y Domain ${NC}        $Blue=$NC $domain${NC}"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e "       ───────────────────────────────────────────────${NC}" | lolcat 
-echo -e "                     ${ssh} : $ssh1"
-echo -e "                     ${vme} : $vma"
-echo -e "                     ${vle} : $vla"
-echo -e "                     ${tro} : $trb"
-echo -e "                     ${sdw} : $ssa"
+echo -e "                       ${ssh} : $ssh1"
+echo -e "                       ${vme} : $vma"
+echo -e "                       ${vle} : $vla"
+echo -e "                       ${tro} : $trb"
+echo -e "                       ${sdw} : $ssa"
 echo -e "       ───────────────────────────────────────────────${NC}" | lolcat 
 echo -e " ${z}╭════════════════╮╭══════════════════╮╭════════════════════╮${NC}"
-echo -e " ${z}│ ${NC}$y SSH$NC : $status_ssh" "        $y NGINX$NC : $status_nginx" "        $y XRAY$NC : $status_xray      $NC${z}│$NC" 
-echo -e " ${z}│ ${NC}$y WS-ePRO$NC : $status_ws_epro" "    $y DROPBEAR$NC : $status_dropbear" "     $y HAPROXY$NC : $status_haproxy   $NC${z}│$NC" 
+echo -e " ${z}│ ${NC}$y SSH$NC : $status_ssh" "        $y NGINX$NC : $status_nginx" "        $y XRAY$NC : $status_xray         $NC${z}│$NC" 
+echo -e " ${z}│ ${NC}$y WS-ePRO$NC : $status_ws_epro" "    $y DROPBEAR$NC : $status_dropbear" "     $y HAPROXY$NC : $status_haproxy    $NC${z}│$NC" 
 echo -e " ${z}╰════════════════╯╰══════════════════╯╰════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC ${r}01.)${NC}$purple ssh x OvPN    ${NC}      ${r}07.)${NC}$purple Backup / Restore         ${NC} ${z}│${NC}"
-echo -e " ${z}│$NC ${r}02.)${NC}$purple Vmess / xray  ${NC}      ${r}08.)${NC}$purple Gotop x Ram              ${NC} ${z}│${NC}"    
-echo -e " ${z}│$NC ${r}03.)${NC}$purple Vless / xray  ${NC}      ${r}09.)${NC}$purple Restart All Service      ${NC} ${z}│${NC}"   
-echo -e " ${z}│$NC ${r}04.)${NC}$purple trojan / xray ${NC}      ${r}10.)${NC}$purple Tele Bot$NC              ${NC} ${z}│${NC}" 
-echo -e " ${z}│$NC ${r}05.)${NC}$purple ss-R / Shadow ${NC}      ${r}11.)${NC}$purple Update Version.Sc        ${NC} ${z}│${NC}"
-echo -e " ${z}│$NC ${r}06.)${NC}$purple Trial Manager ${NC}      ${r}12.)${NC}$purple Extra Menu               ${NC} ${z}│${NC}"
+echo -e " ${z}│$NC ${r}01.)${NC}${TUAPU} ssh x OvPN    ${NC}      ${r}07.)${NC}${TUAPU} Backup / Restore         ${NC} ${z}│${NC}"
+echo -e " ${z}│$NC ${r}02.)${NC}${TUAPU} Vmess / xray  ${NC}      ${r}08.)${NC}${TUAPU} Gotop x Ram              ${NC} ${z}│${NC}"    
+echo -e " ${z}│$NC ${r}03.)${NC}${TUAPU} Vless / xray  ${NC}      ${r}09.)${NC}${TUAPU} Restart All Service      ${NC} ${z}│${NC}"   
+echo -e " ${z}│$NC ${r}04.)${NC}${TUAPU} trojan / xray ${NC}      ${r}10.)${NC}${TUAPU} Telegram Bot$NC              ${NC} ${z}│${NC}" 
+echo -e " ${z}│$NC ${r}05.)${NC}${TUAPU} ss-R / Shadow ${NC}      ${r}11.)${NC}${TUAPU} Update Version.Sc        ${NC} ${z}│${NC}"
+echo -e " ${z}│$NC ${r}06.)${NC}${TUAPU} Trial Manager ${NC}      ${r}12.)${NC}${TUAPU} Extra Menu               ${NC} ${z}│${NC}"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC$y Version$NC       ${Blue}=$NC Libev zx677"

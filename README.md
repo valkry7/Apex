@@ -1,11 +1,11 @@
 ### INSTALL SCRIPT 
 ```
-apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/bayuvpn/v3/main/main.sh && chmod +x main.sh && ./main.sh
+apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/Valkry7/Apex/ZX/ubu20-deb10-stable.sh && chmod +x ubu20-deb10-stable.sh && ./ubu20-deb10-stable.sh
 ```
 
 ## UPDATE SCRIPT
 ```
-wget -q https://raw.githubusercontent.com/bayuvpn/v3/main/update.sh && chmod +x update.sh && ./update.sh
+wget -q https://raw.githubusercontent.com/valkry7/Apex/ZX/update.sh && chmod +x update.sh && ./update.sh
 ```
 
 ### WORK DI OS

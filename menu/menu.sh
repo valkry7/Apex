@@ -177,7 +177,7 @@ let ssa=$ssx/2
 
 # // color validity
 z="\033[96m"
-f="\033[1;97;41m
+f="\033[1;97;41m"
 r="\033[1;31m"  #REDTERANG
 a=" ${CYAN}ACCOUNT"
 
@@ -186,8 +186,7 @@ vme="Vmess"
 vle="Vless"
 tro="Trojan"
 sdw="ss-R"
-
-
+clear
 echo -e " "
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC${f}                        🇮🇩🇮🇩LT🇮🇩🇮🇩                         $NC${z}│$NC"
@@ -213,12 +212,12 @@ echo -e " ${z}│ ${NC}$y SSH$NC : $status_ssh" "        $y NGINX$NC : $status_n
 echo -e " ${z}│ ${NC}$y WS-ePRO$NC : $status_ws_epro" "    $y DROPBEAR$NC : $status_dropbear" "     $y HAPROXY$NC : $status_haproxy   $NC${z}│$NC" 
 echo -e " ${z}╰════════════════╯╰══════════════════╯╰════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC ${r}01.)${NC}$purple ssh x OvPN    ${NC}      ${r}07${NC}$purple Backup / Restore         ${NC} ${z}│${NC}"
-echo -e " ${z}│$NC ${r}02.)${NC}$purple Vmess / xray  ${NC}      ${r}08${NC}$purple Gotop x Ram              ${NC} ${z}│${NC}"    
-echo -e " ${z}│$NC ${r}03.)${NC}$purple Vless / xray  ${NC}      ${r}09${NC}$purple Restart All Service      ${NC} ${z}│${NC}"   
-echo -e " ${z}│$NC ${r}04.)${NC}$purple trojan / xray ${NC}      ${r}10${NC}$purple Tele Bot$NC              ${NC} ${z}│${NC}" 
-echo -e " ${z}│$NC ${r}05.)${NC}$purple ss-R / Shadow ${NC}      ${r}11${NC}$purple Update Version.Sc        ${NC} ${z}│${NC}"
-echo -e " ${z}│$NC ${r}06.)${NC}$purple Trial Manager ${NC}      ${r}12${NC}$purple Extra Menu               ${NC} ${z}│${NC}"
+echo -e " ${z}│$NC ${r}01.)${NC}$purple ssh x OvPN    ${NC}      ${r}07.)${NC}$purple Backup / Restore         ${NC} ${z}│${NC}"
+echo -e " ${z}│$NC ${r}02.)${NC}$purple Vmess / xray  ${NC}      ${r}08.)${NC}$purple Gotop x Ram              ${NC} ${z}│${NC}"    
+echo -e " ${z}│$NC ${r}03.)${NC}$purple Vless / xray  ${NC}      ${r}09.)${NC}$purple Restart All Service      ${NC} ${z}│${NC}"   
+echo -e " ${z}│$NC ${r}04.)${NC}$purple trojan / xray ${NC}      ${r}10.)${NC}$purple Tele Bot$NC              ${NC} ${z}│${NC}" 
+echo -e " ${z}│$NC ${r}05.)${NC}$purple ss-R / Shadow ${NC}      ${r}11.)${NC}$purple Update Version.Sc        ${NC} ${z}│${NC}"
+echo -e " ${z}│$NC ${r}06.)${NC}$purple Trial Manager ${NC}      ${r}12.)${NC}$purple Extra Menu               ${NC} ${z}│${NC}"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC$y Version$NC       ${Blue}=$NC Libev zx677"

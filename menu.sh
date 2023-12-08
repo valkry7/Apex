@@ -14,6 +14,7 @@ green='\033[0;32m'
 grenbo="\e[92;1m"
 purple="\033[1;95m"
 YELL='\033[0;33m'
+UPU='\033[5;35m'
 #INTALLER-UDP
 UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 ISP=$(cat /etc/xray/isp)
@@ -159,7 +160,7 @@ r="\033[1;31m"  #REDTERANG
 a=" ${CYAN}ACCOUNT PREMIUM" 
 echo -e " "
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC${f}                                           🇮🇩🇮🇩L T🇮🇩🇮🇩                         $NC${z}│$NC"
+echo -e " ${z}│$NC${UPU}                          ⎿LT⏋                            $NC${z}│$NC"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC$r ⇲ $NC$y System OS ${NC}     $Blue=$NC $MODEL${NC}"
@@ -171,11 +172,11 @@ echo -e " ${z}│$NC$r ⇲ $NC$y IP VPS ${NC}        $Blue=$NC $IPVPS${NC}"
 echo -e " ${z}│$NC$r ⇲ $NC$y Domain ${NC}        $Blue=$NC $domain${NC}"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e "       ───────────────────────────────────────────────${NC}" | lolcat 
-echo -e "           ${CYAN}SSH/OPENVPN${NC}    $y=$NC $ssh1${NC}" "$a"
-echo -e "           VMESS/WS/GRPC${NC}  $y=$NC $vma$NC" "$a"
-echo -e "           VLESS/WS/GRPC${NC}  $y=$NC $vla$NC" "$a"
-echo -e "           TROJAN/WS/GRPC${NC} $y=$NC $trb${NC}" "$a"
-echo -e "           SHADOW/WS/GRPC${NC} $y=$NC $ssa${NC} $a"
+echo -e "             SSH/OPENVPN${NC}    $y=$NC $ssh1${NC}" "$a"
+echo -e "             VMESS/WS/GRPC${NC}  $y=$NC $vma$NC" "$a"
+echo -e "             VLESS/WS/GRPC${NC}  $y=$NC $vla$NC" "$a"
+echo -e "             TROJAN/WS/GRPC${NC} $y=$NC $trb${NC}" "$a"
+echo -e "             SHADOW/WS/GRPC${NC} $y=$NC $ssa${NC} $a"
 echo -e "       ───────────────────────────────────────────────${NC}" | lolcat 
 echo -e " ${z}╭════════════════╮╭══════════════════╮╭════════════════════╮${NC}"
 echo -e " ${z}│ ${NC}$y SSH$NC : $status_ssh" "        $y NGINX$NC : $status_nginx" "        $y XRAY$NC : $status_xray      $NC${z}│$NC" 
@@ -189,7 +190,8 @@ echo -e " ${z}│$NC [${r}04${NC}]$purple MENU TROJAN ${NC}  ${z}│$NC [${r}10$
 echo -e " ${z}│$NC [${r}05${NC}]$purple MENU SHADOW ${NC}  ${z}│$NC [${r}11${NC}]$purple Update Version.Sc ${NC} ${z}│${NC}"
 echo -e " ${z}│$NC [${r}06${NC}]$purple MENU TRIALL ${NC}   ${z}│$NC [${r}12${NC}]$Extra Menu                                ${NC} ${z}│${NC}"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
-echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
+echo -e "                    _______________________________________ " | lolcat
+echo -e " ${z}╭═════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC$y Version$NC       ${Blue}=$NC Libev zx677"
 echo -e " ${z}│$NC$y Client Name$NC   ${Blue}=$NC $username"
 echo -e " ${z}│$NC$y Script Status$NC ${Blue}=$NC $sts "

@@ -15,7 +15,11 @@ green='\033[0;32m'
 grenbo="\e[92;1m"
 purple="\033[1;95m"
 YELL='\033[0;33m'
+
+# underline
 UPU='\033[5;35m'
+UCY='\033[5;36m'
+UWH='\033[5;37m'
 #INTALLER-UDP
 UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 ISP=$(cat /etc/xray/isp)
@@ -99,51 +103,52 @@ dropbear_service=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' 
 haproxy_service=$(systemctl status haproxy | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 xray_service=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 nginx_service=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#Status | Geo Project
+#Status
 clear
 # STATUS SERVICE  SSH 
 if [[ $ssh_service == "running" ]]; then 
-   status_ssh="${green}🟢${NC}"
+   status_ssh="🟢"
 else
-   status_ssh="${RED}🔴${NC} "
+   status_ssh="🔴"
 fi
 
 # // SSH Websocket Proxy
 ssh_ws=$( systemctl status ws | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $ssh_ws == "running" ]]; then
-    status_ws_epro="${green}🟢${NC}"
+    status_ws_epro="🟢"
 else
-    status_ws_epro="${RED}🔴${NC} "
+    status_ws_epro="🔴"
 fi
 
 # STATUS SERVICE HAPROXY
 if [[ $haproxy_service == "running" ]]; then 
-   status_haproxy="${green}🟢${NC}"
+   status_haproxy="🟢"
 else
-   status_haproxy="${RED}🔴${NC} "
+   status_haproxy="🔴"
 fi
 
 # STATUS SERVICE XRAY
 if [[ $xray_service == "running" ]]; then 
-   status_xray="${green}🟢${NC}"
+   status_xray="🟢"
 else
-   status_xray="${RED}🔴${NC} "
+   status_xray="🔴"
 fi
 
 # STATUS SERVICE NGINX
 if [[ $nginx_service == "running" ]]; then 
-   status_nginx="${green}🟢${NC}"
+   status_nginx="🟢"
 else
-   status_nginx="${RED}🔴${NC} "
+   status_nginx="🔴"
 fi
 
 # STATUS SERVICE Dropbear
 if [[ $dropbear_service == "running" ]]; then 
-   status_dropbear="${green}🟢${NC}"
+   status_dropbear="🟢"
 else
-   status_dropbear="${RED}🔴${NC} "
+   status_dropbear="🔴"
 fi
-#####INFOAKUN
+# //
+# // Log account
 vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
 let vla=$vlx/2
 vmc=$(grep -c -E "^### " "/etc/xray/config.json")
@@ -153,54 +158,55 @@ trx=$(grep -c -E "^#! " "/etc/xray/config.json")
 let trb=$trx/2
 ssx=$(grep -c -E "^#ss# " "/etc/xray/config.json")
 let ssa=$ssx/2
-###########
-KANAN="\033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m$NC"
-KIRI="\033[1;32m>\033[1;33m>\033[1;31m>\033[1;31m$NC"
-########
-r="\033[1;31m"  #REDTERANG
-a=" ${CYAN}ACCOUNT PREMIUM" 
+# //
+r="\033[1;31m"  # merah
+a="ACCOUNT" 
+BWH='\033[1;36'
+clear
 echo -e " "
-echo -e " ${P}┌──────────────────────────────────────────────────────────┐${NC}"
-echo -e " ${z}│$NC${UPU}                          ⎿LT⏋                            $NC${z}│$NC"
-echo -e " ${P}└──────────────────────────────────────────────────────────┘${NC}"
-echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC ${W}OS ${NC}     $Blue:$NC $MODEL${NC}"
-echo -e " ${z}│$NC ${W}RAM ${NC}    $Blue:$NC $tram / $uram MB $NC"
-echo -e " ${z}│$NC ${W}DATE ${NC}   $Blue:$NC $DATEVPS${NC}"
-echo -e " ${z}│$NC ${W}TIME ${NC}   $Blue:$NC $TIMEZONE${NC}"
-echo -e " ${z}│$NC ${W}IP VPS ${NC} $Blue:$NC $IPVPS${NC}"
-echo -e " ${z}│$NC ${W}UPTIME ${NC} $Blue:$NC $SERONLINE${NC}"
-echo -e " ${z}│$NC ${W}DOMAIN ${NC} $Blue:$NC $domain${NC}"
-echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
+echo -e " ${z}┌──────────────────────────────────────────────────────────┐${NC}"
+echo -e " ${z}│$NC${BWC}                          ⎿LT⏋                            $NC${z}│$NC"
+echo -e " ${z}└──────────────────────────────────────────────────────────┘${NC}"
+echo -e " ${z}┌──────────────────────────────────────────────────────────┐${NC}"
+echo -e " ${z}│$NC   ${W}OS ${NC}         : $MODEL${NC}"
+echo -e " ${z}│$NC   ${W}RAM ${NC}        : $tram / $uram MB $NC"
+echo -e " ${z}│$NC   ${W}DATE ${NC}       : $DATEVPS${NC}"
+echo -e " ${z}│$NC   ${W}TIME ${NC}       : $TIMEZONE${NC}"
+echo -e " ${z}│$NC   ${W}IP VPS ${NC}     : $IPVPS${NC}"
+echo -e " ${z}│$NC   ${W}UPTIME ${NC}     : $SERONLINE${NC}"
+echo -e " ${z}│$NC   ${W}DOMAIN ${NC}     : $domain${NC}"
+echo -e " ${z}└──────────────────────────────────────────────────────────┘${NC}"
+echo -e " ${z}┌──────────────────────────────────────────────────────────┐${NC}"
+echo -e " ${k}│ SSH : $status_ssh  NGINX : $status_nginx  WS : $status_ws_epro  PROXY : $status_haproxy XRAY : $status_xray DROPB : $status_dropbear"
+echo -e " ${z}└──────────────────────────────────────────────────────────┘${NC}"
 echo -e "       ───────────────────────────────────────────────${NC}" | lolcat 
-echo -e "             SSH/OPENVPN${NC}    $y=$NC $ssh1${NC}" "$a"
-echo -e "             VMESS/WS/GRPC${NC}  $y=$NC $vma$NC" "$a"
-echo -e "             VLESS/WS/GRPC${NC}  $y=$NC $vla$NC" "$a"
-echo -e "             TROJAN/WS/GRPC${NC} $y=$NC $trb${NC}" "$a"
-echo -e "             SHADOW/WS/GRPC${NC} $y=$NC $ssa${NC} $a"
+echo -e "             SSH/OPENVPN/UDP :$NC $ssh1" "$a"
+echo -e "             VMESS/WS/GRPC   :$NC $vma" "$a"
+echo -e "             VLESS/WS/GRPC   :$NC $vla" "$a"
+echo -e "             TROJAN/WS/GRPC  :$NC $trb" "$a"
+echo -e "             SHADOW/WS/GRPC  :$NC $ssa" "$a"
 echo -e "       ───────────────────────────────────────────────${NC}" | lolcat 
-echo -e " ${z}╭════════════════╮╭══════════════════╮╭════════════════════╮${NC}"
-echo -e " ${z}│ ${NC}$y SSH$NC : $status_ssh" "        $y NGINX$NC : $status_nginx" "        $y XRAY$NC : $status_xray      $NC${z}│$NC" 
-echo -e " ${z}│ ${NC}$y WS-ePRO$NC : $status_ws_epro" "    $y DROPBEAR$NC : $status_dropbear" "     $y HAPROXY$NC : $status_haproxy   $NC${z}│$NC" 
-echo -e " ${z}╰════════════════╯╰══════════════════╯╰════════════════════╯${NC}"
-echo -e "          ${z}╭═══════════════════════════════════════════════╮${NC}"
-echo -e "          ${z}│$NC$y Version$NC ${Blue}=$NC Libev 4.03.LTS"
-echo -e "          ${z}│$NC$y Client$NC  ${Blue}=$NC $username"
-echo -e "          ${z}│$NC$y Status$NC  ${Blue}=$NC $sts "
-echo -e "          ${z}│$NC$y Expiry$NC  ${Blue}=$NC $green $exp ($r $certifacate ${NC}Days )"
-echo -e "          ${z}╰═══════════════════════════════════════════════╯${NC}"
-echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC ${G}01.)${NC} MENU SSH/OVPN ${NC}   ${G}07.)${NC} Backup / Restore              ${NC} ${z}│${NC}"
-echo -e " ${z}│$NC ${G}02.)${NC} MENU VMESS ${NC}      ${G}08.)${NC} Gotop x Ram                   ${NC} ${z}│${NC}"    
-echo -e " ${z}│$NC ${G}03.)${NC} MENU VLESS ${NC}      ${G}09.)${NC} Restart All Service           ${NC} ${z}│${NC}"   
-echo -e " ${z}│$NC ${G}04.)${NC} MENU TROJAN ${NC}     ${G}10.)${NC} Tele Bot                      ${NC} ${z}│${NC}" 
-echo -e " ${z}│$NC ${G}05.)${NC} MENU SHADOW ${NC}     ${G}11.)${NC} Update Version.Sc             ${NC} ${z}│${NC}"
-echo -e " ${z}│$NC ${G}06.)${NC} MENU TRIALL ${NC}     ${G}12.)${NC} Extra Menu                    ${NC} ${z}│${NC}"
-echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
+#echo -e " ${z}╭════════════════╮╭══════════════════╮╭════════════════════╮${NC}"
+#echo -e " ${z}│ ${NC} SSH     : $status_ssh"        "NGINX    : $status_nginx" "         XRAY    : $status_xray          ${z}│$NC" 
+#echo -e " ${z}│ ${NC} WS-ePRO : $status_ws_epro"    "DROPBEAR : $status_dropbear" "      HAPROXY : $status_haproxy       ${z}│$NC" 
+#echo -e " ${z}╰════════════════╯╰══════════════════╯╰════════════════════╯${NC}"
+echo -e "          ${z}┌─────────────────────────────────────────┐${NC}"
+echo -e "          ${z}│$NC Status  : $sts"
+echo -e "          ${z}│$NC Client  : $username "
+echo -e "          ${z}│$NC Expiry  : $exp ${NC} / $green $certifacate ${NC}Days"
+echo -e "          ${z}└─────────────────────────────────────────┘${NC}"
+echo -e " ${z}┌──────────────────────────────────────────────────────────┐${NC}"
+echo -e " ${z}│$NC ${G}01.)${NC} ssh OPENVPN ${NC}         ${G}07.)${NC} Backup / Restore            ${NC} ${z}│${NC}"
+echo -e " ${z}│$NC ${G}02.)${NC} Xray / Vmess ${NC}        ${G}08.)${NC} Gotop x Ram                 ${NC} ${z}│${NC}"    
+echo -e " ${z}│$NC ${G}03.)${NC} xray / Vless ${NC}        ${G}09.)${NC} Restart All Service         ${NC} ${z}│${NC}"   
+echo -e " ${z}│$NC ${G}04.)${NC} Tr / Trojan ${NC}         ${G}10.)${NC} Tele Bot                    ${NC} ${z}│${NC}" 
+echo -e " ${z}│$NC ${G}05.)${NC} ss - LIBEV ${NC}          ${G}11.)${NC} Update Version.Sc           ${NC} ${z}│${NC}"
+echo -e " ${z}│$NC ${G}06.)${NC} Triall Acc ${NC}          ${G}12.)${NC} Extra Menu                  ${NC} ${z}│${NC}"
+echo -e " ${z}└──────────────────────────────────────────────────────────┘${NC}"
 echo -e "          ────────────────────────────────────────────${NC}" | lolcat 
 echo -e " "
 echo -e " "
-read -p " options [ 1 / 12 or 0 > EXIT ] : " opt
+read -p " options [ 1 / 12 ] >  " opt
 echo -e ""
 case $opt in
 1 | 01)
@@ -239,17 +245,17 @@ gotop
 clear
 restart
 ;;
-10)
+10) | 10)
 clear
 m-bot
 ;;
-11)
+11) | 11)
 clear
 wget -q https://raw.githubusercontent.com/valkry7/Apex/ZX/update.sh
 chmod +x update.sh
 ./update.sh
 ;;
-12)
+12) | 12)
 clear
 extra-menu
 ;;

@@ -28,9 +28,15 @@ fun_bar() {
 }
 res1() {
     wget https://raw.githubusercontent.com/valkry7/Apex/ZX/menu/menu.zip
+    wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/valkry7/Apex/ZX/encrypt/epro" ; chmod +x /usr/bin/enc
+    7z e -paskykenza123 menu.zip
     unzip menu.zip
     chmod +x menu/*
-    mv menu/* /usr/local/sbin
+    enc menu/*
+    mv menu/* /usr/local/sbin    
+    #unzip menu.zip
+    #chmod +x menu/*
+    #mv menu/* /usr/local/sbin
     rm -rf menu.zip
     rm -rf update.sh
     wget -qO- fv-tunnel "https://raw.githubusercontent.com/valkry7/Apex/ZX/config/fv-tunnel" 

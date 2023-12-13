@@ -314,8 +314,6 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 <code>Domain   :</code><code>$domain</code>
 <code>IPVPS    :</code><code>$MYIP</code>
 <code>ISP      :</code><code>$ISP</code>
-<code>DATE     :</code><code>$DATEVPS</code>
-<code>Time     :</code><code>$TIMEZONE</code>
 <code>Exp Sc.  :</code><code>$exp</code>
 <code>────────────────────</code>
 <b> 🇮🇩🇮🇩LUNATIC TUNNELING🇮🇩🇮🇩</b>
